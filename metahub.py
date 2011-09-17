@@ -34,5 +34,5 @@ class Fetch(lyricsapi.Fetcher):
 if __name__ == '__main__':
     artist = raw_input('Artist: ')
     title = raw_input('Title: ')
-    api = Metahub(artist, title)
+    api = Fetch(artist, title)
     print api.get()

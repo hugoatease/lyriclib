@@ -1,6 +1,4 @@
 #!/usr/bin/python
-if __name__ == '__main__':
-    import metahub, sing365
 
 class Fetcher:
 #Parent-class for the site-specific fetching modules
@@ -15,6 +13,7 @@ class Fetcher:
  
 class API:
     def __init__(self, artist, title, sources=None):
+        import metahub, sing365
         if sources == None:
             self.sources = [metahub, sing365]
         self.artist = artist
@@ -33,6 +32,9 @@ class API:
         try:
             return self.results
         except:
+            self.results = None
+            self.siteID = None
+            self.version = None
             return None
 
 if __name__ == '__main__':

@@ -128,11 +128,11 @@ class Fetch(lyricsapi.Fetcher):
             self.parseLyricPage()
             lyrics = unicode(self.lyrics)
         except:
-            lyrics = 'Error'
+            lyrics = None
         return lyrics
         
 if __name__ == '__main__':
     artist = raw_input('Artist: ')
     title = raw_input('Title: ')
-    api = Sing365(artist, title)
+    api = Fetch(artist, title)
     print api.get()
