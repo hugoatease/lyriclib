@@ -8,7 +8,7 @@ class Fetcher:
         self.artist = artist
         self.title = title
         
-    def unicode(lyric):
+    def unicode(self, lyric):
         if lyric != None:
             ulyric = lyric.decode('utf-8')
             ulyric = unicode(ulyric)
