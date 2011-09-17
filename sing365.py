@@ -126,7 +126,7 @@ class Fetch(lyricsapi.Fetcher):
             self.parseSearch()
             self.getLyricUrl()
             self.parseLyricPage()
-            lyrics = unicode(self.lyrics)
+            lyrics = self.unicode(self.lyrics)
         except:
             lyrics = None
         return lyrics

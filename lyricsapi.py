@@ -8,6 +8,14 @@ class Fetcher:
         self.artist = artist
         self.title = title
         
+    def unicode(lyric):
+        if lyric != None:
+            ulyric = lyric.decode('utf-8')
+            ulyric = unicode(ulyric)
+            return ulyric
+        else:
+            return None
+        
     def get(self):
         return self.lyrics
  
@@ -45,3 +53,4 @@ if __name__ == '__main__':
     print api.results
     print 'SiteID: ', api.siteID
     print 'Version: ', api.version
+    print type(api.results)

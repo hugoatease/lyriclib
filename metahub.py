@@ -33,7 +33,7 @@ class Fetch(lyricsapi.Fetcher):
         if self.lyrics == None:
             return None
         else:
-            lyrics = unicode(self.lyrics)
+            lyrics = self.unicode(self.lyrics)
             return lyrics
     
 if __name__ == '__main__':
