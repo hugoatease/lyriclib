@@ -30,7 +30,10 @@ class API:
                     self.siteID = source.__siteID__
                     self.version = source.__version__
                     break
-        return self.results
+        try:
+            return self.results
+        except:
+            return None
 
 if __name__ == '__main__':
     artist = raw_input('Artist: ')
