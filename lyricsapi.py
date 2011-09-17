@@ -23,7 +23,7 @@ class API:
         for source in self.sources:
             api = source.Fetch(self.artist, self.title)
             results = api.get()
-            if results != None and results != 'Error':
+            if results != None:
                 if len(results) > 1:
                     self.results = results
                     self.siteID = source.__siteID__
