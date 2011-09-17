@@ -2,7 +2,11 @@
 import lyricsapi
 import urllib2
 
-class Metahub(lyricsapi.Fetcher):
+__siteID__ = 'MetaHub'
+__version__ = 1
+__author__ = 'Hugo Caille'
+
+class Fetch(lyricsapi.Fetcher):
        
     def makeURL(self):
         artist = urllib2.quote(self.artist)
@@ -24,7 +28,8 @@ class Metahub(lyricsapi.Fetcher):
     
     def get(self):
         self.getLyric()
-        return self.lyrics
+        lyrics = unicode(self.lyrics)
+        return lyrics
     
 if __name__ == '__main__':
     artist = raw_input('Artist: ')
