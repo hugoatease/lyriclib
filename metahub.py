@@ -20,19 +20,25 @@ class Fetch(lyricsapi.Fetcher):
         try:
             page = urllib2.urlopen(url)
             lyrics = page.read()
+            if len(lyrics) < 6:
+                lyrics = None
         except:
-            lyrics = 'Error'
+            lyrics = None
         
         self.lyrics = lyrics
         return lyrics
     
     def get(self):
         self.getLyric()
-        lyrics = unicode(self.lyrics)
-        return lyrics
+        if self.lyrics == None:
+            return None
+        else:
+            lyrics = unicode(self.lyrics)
+            return lyrics
     
 if __name__ == '__main__':
     artist = raw_input('Artist: ')
     title = raw_input('Title: ')
     api = Fetch(artist, title)
     print api.get()
+    print type(api.lyrics)
