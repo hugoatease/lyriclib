@@ -1,6 +1,14 @@
-from tunehubcore.sites.sing365 import *
-from tunehubcore import datastruct
-
+class Fetcher:
+#Parent-class for the site-specific fetching modules
+    def __init__(self, artist, title):
+        artist = artist.encode('utf-8')
+        title = title.encode('utf-8')
+        self.artist = artist
+        self.title = title
+        
+    def get(self):
+        return self.lyrics
+        
 class Lyrics:
     
     def __init__(self, cacheObject, artist, title, album=None, year=None):
