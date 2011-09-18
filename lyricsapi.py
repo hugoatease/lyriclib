@@ -39,6 +39,8 @@ class API:
         import metahub, sing365
         if sources == None:
             self.sources = [metahub, sing365]
+        else:
+            self.sources = sources
         self.artist = artist
         self.title = title
 
